@@ -20,9 +20,9 @@ class blrequester():
         }
     # is also contained in general borderlands data/ cookies
     cookieset = dict(
-            prod_prod_ctlg_2_117="",
-            prod_prod_ctuc_2_117="",
-            prod_prod_ctut_2_117=""
+            prod_prod_ctlg_2_117="a",
+            prod_prod_ctuc_2_117="a",
+            prod_prod_ctut_2_117="a"
         )
     # session cookie contains %22 characters, better use token
     session = ""
@@ -32,6 +32,10 @@ class blrequester():
         # in order to get "token" and "prod_*" -cookies
         pass
 
+    def __init__(self,cookieset, session):
+        self.cookieset = cookieset
+        self.session = session
+        
     def request(self, name, entry):
         if "VIP" in name:
             #pass
@@ -60,7 +64,7 @@ class blrequester():
             print("[ERROR] unknown code type")
         if sendout:
             headerset["referer"] = self.base_url + self.base_referer + referer
-            headerset["cookie"] = "; ".join([a[0]+"="+a[1] for a in cookieset.items()]),
+            headerset["cookie"] = "; ".join([a[0]+"="+a[1] for a in cookieset.items()])
             full_url = self.base_url + self.base_request_url + request_url
             response = requests.post(full_url, json=payload, headers=headerset)
             self.print_response(etype, code, response)
