@@ -11,7 +11,7 @@ if __name__ == "__main__":
         for entry in tdict["entries"]:
             r = random.uniform(1,4)
             req.request(name, entry)
-            print("sleep for {} seconds".format(r))
+            print("sleep for {} seconds before next request".format(r))
             sleep(r)
             # kann alles in die requester logic rein
             #   pt_str = ""
