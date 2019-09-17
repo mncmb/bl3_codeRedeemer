@@ -5,3 +5,5 @@ lib64
 lib64/
 share/
 pyvenv.cfg
+python.py
+bl_autocodes/__pycache__/
