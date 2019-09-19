@@ -7,3 +7,4 @@ share/
 pyvenv.cfg
 python.py
 bl_autocodes/__pycache__/
+redeemed_codes.txt
